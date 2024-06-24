@@ -16,6 +16,9 @@
                     <div v-for="link in links" :key="link.name">
                         <NuxtLink as="a" class="text-sm py-2 px-2 cursor-pointer font-light hover:text-[#A32035]" :to="link.href">{{ link.name }}</NuxtLink>
                     </div>
+                    <a class="text-sm py-2 px-2 cursor-pointer font-light hover:text-[#A32035]" href="https://accessibility.mit.edu/" target="_blank" aria-label="MIT Acessability">
+                        Accessibility
+                    </a>
                 </div>  
         
                 <div class="border-t-2 border-gray-500 mt-16 pt-8">
