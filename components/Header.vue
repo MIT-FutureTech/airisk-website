@@ -15,7 +15,7 @@
                 <nav class="font-light tracking-wide hidden md:flex">
                     <ul class="flex space-x-8">
                         <li v-for="link in links" :key="link.name">
-                            <NuxtLink as="a" class="py-2 px-2 cursor-pointer" :to="link.href">{{ link.name }}</NuxtLink>
+                            <NuxtLink as="a" class="py-2 px-2 cursor-pointer hover:text-[#A32035]" :to="link.href">{{ link.name }}</NuxtLink>
 
                         </li>
 
@@ -49,10 +49,10 @@ const toggleMenu = () => {
 }
 
 const links = [
-    {name: 'AI Risk Database', href: '/#ai-risk-database' },
-    { name: 'Taxonomy of AI Risk', href: '/#taxonomy-of-ai-risk' },
-    { name: 'Key insights', href: '/#key-insights' },
-    { name: 'How to use the index', href: '/#how-to-use-the-index' },
+    { "name": 'AI Risk Database', "href": '/#ai-risk-database', "aria-label": "AI Risk Database"},
+    { "name": 'Taxonomy of AI Risk', "href": '/#taxonomy-of-ai-risk', "aria-label": "Taxonomy of ai risk" },
+    { "name": 'Key insights', "href": '/#key-insights', "aria-label": "Key insights" },
+    { "name": 'How to use the index', "href": '/#how-to-use-the-index', "aria-label": "How to use index" },
 ]
 
 const consenseHeader = ref(false);

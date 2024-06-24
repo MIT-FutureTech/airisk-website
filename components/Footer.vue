@@ -14,7 +14,7 @@
 
                 <div class="mt-8 grid gap-4 grid-cols-1 sm:grid-cols-2 grid-flow-row">  
                     <div v-for="link in links" :key="link.name">
-                        <NuxtLink as="a" class="text-sm py-2 px-2 cursor-pointer font-light" :to="link.href">{{ link.name }}</NuxtLink>
+                        <NuxtLink as="a" class="text-sm py-2 px-2 cursor-pointer font-light hover:text-[#A32035]" :to="link.href">{{ link.name }}</NuxtLink>
                     </div>
                 </div>  
         
