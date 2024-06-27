@@ -1,5 +1,5 @@
 <template>
-    <NuxtParticles id="tsparticles" :options="options"></NuxtParticles>
+    <NuxtParticles id="tsparticles" :options="options" />
 </template>
 
 <script setup>
@@ -39,7 +39,7 @@ const options = {
     "duration": 0,
     "fpsLimit": 120,
     "interactivity": {
-        "detectsOn": "window",
+        "detectsOn": "canvas",
         "events": {
             "onClick": {
                 "enable": true,
