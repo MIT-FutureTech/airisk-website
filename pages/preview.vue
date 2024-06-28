@@ -32,9 +32,7 @@ const { $directus, $readItems, $preview } = useNuxtApp();
 
 const keyPrfx = $preview.value ? '-preview' : '';
 if ($preview) {
-    console.log('preview')
     const  {data: sections} = await useAsyncData(`sections${keyPrfx}`, async () => {
-        console.log('preview')
     return $directus.request($readItems(('home'), {
         fields: [
             'sections.collection',
