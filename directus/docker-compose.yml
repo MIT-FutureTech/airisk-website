@@ -19,4 +19,4 @@ services:
       CORS_ALLOW_ORIGIN: "*"
       CORS_ALLOW_METHODS: "GET,POST,PUT,PATCH,DELETE,OPTIONS"
       CORS_ALLOW_HEADERS: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-      CONTENT_SECURITY_POLICY_DIRECTIVES__FRAME_SRC: "localhost:3000 localhost:3000"
+      CONTENT_SECURITY_POLICY_DIRECTIVES__FRAME_SRC: "128.52.139.178:3000"
