@@ -28,9 +28,23 @@ const blockMap = {
 }
 
 const { getItems } = useDirectusItems();
-const { $directus, $readItems } = useNuxtApp();
+const { $directus, $readItems, $preview } = useNuxtApp();
 
-const  {data: sections} = await useAsyncData('sections', async () => {
+const keyPrfx = $preview.value ? '-preview' : '';
+if ($preview) {
+    console.log('preview')
+    const  {data: sections} = await useAsyncData(`sections${keyPrfx}`, async () => {
+        console.log('preview')
+    return $directus.request($readItems(('home'), {
+        fields: [
+            'sections.collection',
+            'sections.item.*.*.*.*.*.*.*',
+        ]
+    }))
+})
+}
+
+const  {data: sections} = await useAsyncData(`sections${keyPrfx}`, async () => {
     return $directus.request($readItems(('home'), {
         fields: [
             'sections.collection',
