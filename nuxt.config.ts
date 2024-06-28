@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       directus: {
-        url: "http://localhost:8055/"
+        url: "http://128.52.139.178:8055/"
       }
     }
   }
