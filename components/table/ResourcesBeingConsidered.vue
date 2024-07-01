@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 import { useFetch } from 'nuxt/app';
-import { FromSheetsStyleToCss } from '~/composables/FromSheetsStyleToCss'
+import { FromSheetsStyleToCss } from '../../composables/FromSheetsStyleToCss'
 
 const props = withDefaults(defineProps<{ cellRange: string }>(), {
   cellRange: 'B11:I24'

@@ -22,32 +22,32 @@ export const shouldDisplayCell = (rowIndex, colIndex, merges, columnGroups) => {
             if (
                 (
                     rowIndex >= merge.startRowIndex &&
-                rowIndex < merge.endRowIndex &&
-                colIndex > merge.startColumnIndex &&
-                colIndex < merge.endColumnIndex)
+                    rowIndex < merge.endRowIndex &&
+                    colIndex > merge.startColumnIndex &&
+                    colIndex < merge.endColumnIndex)
                 || (
                     rowIndex > merge.startRowIndex &&
-                rowIndex < merge.endRowIndex &&
-                colIndex >= merge.startColumnIndex &&
-                colIndex < merge.endColumnIndex)
+                    rowIndex < merge.endRowIndex &&
+                    colIndex >= merge.startColumnIndex &&
+                    colIndex < merge.endColumnIndex)
             ) {
                 return false; // Cell is within a merged range
             }
         }
     }
     if (columnGroups) {
-    // Check if the cell's column is within any collapsed column group
-    for (const group of columnGroups) {
-        if (
-            group.range.dimension === "COLUMNS" &&
-            colIndex >= group.range.startIndex &&
-            colIndex < group.range.endIndex &&
-            group.collapsed
-        ) {
-            return false; // Cell's column is within a collapsed column group
+        // Check if the cell's column is within any collapsed column group
+        for (const group of columnGroups) {
+            if (
+                group.range.dimension === "COLUMNS" &&
+                colIndex >= group.range.startIndex &&
+                colIndex < group.range.endIndex &&
+                group.collapsed
+            ) {
+                return false; // Cell's column is within a collapsed column group
+            }
         }
     }
-}
 
     return true; // Cell should be displayed
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="p-2"> <template v-if="cell.formattedValue?.length > 100 && !seeAll">
+    <div class="p-2 text-base"> <template v-if="cell.formattedValue?.length > 100 && !seeAll">
             {{ cell.formattedValue.substring(0, 100) }}... <button @click="seeAll = !seeAll">See All</button>
         </template>
         <template v-else>
