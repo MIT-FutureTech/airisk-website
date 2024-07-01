@@ -1,14 +1,14 @@
 <template>
     <div class="mt-8 overflow-auto">
-        <table class="table table-striped table-bordered ">
+        <table class="table table-striped table-bordered">
             <tbody>
-                <template v-for="(row, rowIndex) in data.sheets[0].data[0].rowData.slice(0, 100)" :key="rowIndex">
+                <template v-for="(row, rowIndex) in data.sheets[0].data[0].rowData" :key="rowIndex">
 
                     <tr>
                         <template v-for="(cell, colIndex) in row.values" :key="colIndex">
                             <td 
-                            v-if="shouldDisplayCell(rowIndex+1, colIndex, merges, columnGroups)"
-                            :style="FromSheetsStyleToCss(cell.effectiveFormat)" :rowspan="getRowSpan(rowIndex, colIndex, mergesCells)"
+                            v-if="!data.sheets[0].data[0].rowMetadata[rowIndex].hiddenByFilter && shouldDisplayCell(rowIndex+1, colIndex, merges, columnGroups)"
+                                :style="FromSheetsStyleToCss(cell.effectiveFormat)" :rowspan="getRowSpan(rowIndex, colIndex, mergesCells)"
                                 :colspan="getColumnSpan(rowIndex, colIndex, mergesCells)">
                                 <Cell :cell="cell" />
                             </td>
@@ -21,17 +21,20 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { FromSheetsStyleToCss } from '~/composables/FromSheetsStyleToCss'
 import { getRowSpan, getColumnSpan, shouldDisplayCell } from '~/composables/SpanControll.js'
 
-const baseURL = 'https://sheets.googleapis.com/v4/spreadsheets'
-const spreadsheetId = '1evwjF4XmpykycpeZFq0FUteEAt7awx2i2oE6kMrV_xE'
-const range = "'AI Risk Database v0.1'!A2:S"
-const includeGridData = true
-const key = 'AIzaSyDJZ56R-7j6imFkvj6s_QOWLEkugYRF5Zc'
+const props = withDefaults(defineProps<{ cellRange: string }>(), {
+  cellRange: 'A2:S'
+});
 
-const { data } = await useFetch(`${baseURL}/${spreadsheetId}?key=${key}&ranges=${range}&includeGridData=${includeGridData}`)
+const tabName = "AI Risk Database v0.1"
+const range = `'${tabName}'!${props.cellRange}`
+
+const { data } = await useFetch(
+    `${process.env.SHEETS_BASE_URL}/${process.env.SPREADSHEET_ID}?key=${process.env.API_KEY}&ranges=${range}&includeGridData=${process.env.includeGridData}`
+);
 
 const mergesCells = ref(data.value.sheets[0].merges);
 const merges = ref(data.value.sheets[0].merges);

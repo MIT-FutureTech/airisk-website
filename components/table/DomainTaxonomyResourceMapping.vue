@@ -17,13 +17,14 @@
 </template>
 
 <script setup lang="ts">
-import { FromSheetsStyleToCss } from '~/composables/FromSheetsStyleToCss'
+import { useFetch } from 'nuxt/app';
+import { FromSheetsStyleToCss } from '~/composables/FromSheetsStyleToCss.js'
 
 const props = withDefaults(defineProps<{ cellRange: string }>(), {
-  cellRange: 'B11:F34'
+  cellRange: 'B11:J55'
 });
 
-const tabName = "Domain Taxonomy of AI Risks v0.1"
+const tabName = "Domain Taxonomy resource mapping"
 const range = `'${tabName}'!${props.cellRange}`
 
 const { data } = await useFetch(

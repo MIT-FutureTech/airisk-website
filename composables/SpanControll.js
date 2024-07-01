@@ -14,20 +14,28 @@ export const getColumnSpan = (rowIndex, colIndex, mergesCells) => {
     return merges[0].endColumnIndex - merges[0].startColumnIndex
 }
 
-
-export const shouldDisplayCell = (rowIndex, colIndex, merges, columnGroups) => {  
+export const shouldDisplayCell = (rowIndex, colIndex, merges, columnGroups) => {
     // Check if the cell is within any merged range
-    for (const merge of merges) {
-        if (
-            rowIndex >= merge.startRowIndex &&
-            rowIndex < merge.endRowIndex &&
-            colIndex > merge.startColumnIndex &&
-            colIndex < merge.endColumnIndex
-        ) {
-            return false; // Cell is within a merged range
+    if (merges) {
+
+        for (const merge of merges) {
+            if (
+                (
+                    rowIndex >= merge.startRowIndex &&
+                rowIndex < merge.endRowIndex &&
+                colIndex > merge.startColumnIndex &&
+                colIndex < merge.endColumnIndex)
+                || (
+                    rowIndex > merge.startRowIndex &&
+                rowIndex < merge.endRowIndex &&
+                colIndex >= merge.startColumnIndex &&
+                colIndex < merge.endColumnIndex)
+            ) {
+                return false; // Cell is within a merged range
+            }
         }
     }
-
+    if (columnGroups) {
     // Check if the cell's column is within any collapsed column group
     for (const group of columnGroups) {
         if (
@@ -39,6 +47,7 @@ export const shouldDisplayCell = (rowIndex, colIndex, merges, columnGroups) => {
             return false; // Cell's column is within a collapsed column group
         }
     }
+}
 
     return true; // Cell should be displayed
 }
