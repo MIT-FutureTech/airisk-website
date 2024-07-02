@@ -2,39 +2,29 @@
   <div class="flex itenm-center justify-center mt-8 overflow-auto">
     <table class="table table-striped table-bordered w-[60%] h-[80%]">
       <tbody>
-        <template
-          v-for="(row, rowIndex) in data.sheets[0].data[0].rowData"
-          :key="rowIndex"
-        >
+        <template v-for="(row, rowIndex) in data.sheets[0].data[0].rowData" :key="rowIndex">
           <tr>
             <template v-for="(cell, colIndex) in row.values" :key="colIndex">
-              <td
-                v-if="
-                  !data.sheets[0].data[0].rowMetadata[rowIndex]
-                    .hiddenByFilter &&
-                  shouldDisplayCell(
-                    rowIndex + (baseStart - 1),
-                    colIndex + 1,
-                    merges,
-                    columnGroups
-                  )
-                "
-                :style="FromSheetsStyleToCss(cell.effectiveFormat)"
-                :rowspan="
-                  getRowSpan(
-                    rowIndex + (baseStart - 2),
-                    colIndex + 1,
-                    mergesCells
-                  )
-                "
-                :colspan="
-                  getColumnSpan(
-                    rowIndex + (baseStart - 2),
-                    colIndex + 1,
-                    mergesCells
-                  )
-                "
-              >
+              <td v-if="
+                !data.sheets[0].data[0].rowMetadata[rowIndex]
+                  .hiddenByFilter &&
+                shouldDisplayCell(
+                  rowIndex + (baseStart - 1),
+                  colIndex + 1,
+                  merges,
+                  columnGroups
+                )
+              " :style="FromSheetsStyleToCss(cell.effectiveFormat)" :rowspan="getRowSpan(
+                  rowIndex + (baseStart - 2),
+                  colIndex + 1,
+                  mergesCells
+                )
+                  " :colspan="getColumnSpan(
+                  rowIndex + (baseStart - 2),
+                  colIndex + 1,
+                  mergesCells
+                )
+                  ">
                 <Cell :cell="cell" />
               </td>
             </template>

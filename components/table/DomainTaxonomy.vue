@@ -2,27 +2,19 @@
   <div class="flex itenm-center justify-center mt-8 overflow-auto">
     <table class="table table-striped table-bordered w-full">
       <tbody>
-        <template
-          v-for="(row, rowIndex) in data.sheets[0].data[0].rowData"
-          :key="rowIndex"
-        >
-          <tr
-            v-if="!data.sheets[0].data[0].rowMetadata[rowIndex].hiddenByFilter"
-          >
+        <template v-for="(row, rowIndex) in data.sheets[0].data[0].rowData" :key="rowIndex">
+          <tr v-if="!data.sheets[0].data[0].rowMetadata[rowIndex].hiddenByFilter">
             <template v-for="(cell, colIndex) in row.values" :key="colIndex">
-              <td
-                v-if="
-                  !data.sheets[0].data[0].rowMetadata[rowIndex]
-                    .hiddenByFilter &&
-                  shouldDisplayCell(
-                    rowIndex + (baseStart - 1),
-                    colIndex + 1,
-                    merges,
-                    columnGroups
-                  )
-                "
-                :style="FromSheetsStyleToCss(cell.effectiveFormat)"
-              >
+              <td v-if="
+                !data.sheets[0].data[0].rowMetadata[rowIndex]
+                  .hiddenByFilter &&
+                shouldDisplayCell(
+                  rowIndex + (baseStart - 1),
+                  colIndex + 1,
+                  merges,
+                  columnGroups
+                )
+              " :style="FromSheetsStyleToCss(cell.effectiveFormat)">
                 <Cell :cell="cell" />
               </td>
             </template>

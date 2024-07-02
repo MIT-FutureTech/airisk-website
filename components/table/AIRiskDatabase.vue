@@ -2,27 +2,21 @@
   <div class="mt-8 overflow-auto">
     <table class="table table-striped table-bordered">
       <tbody>
-        <template
-          v-for="(row, rowIndex) in data.sheets[0].data[0].rowData"
-          :key="rowIndex"
-        >
+        <template v-for="(row, rowIndex) in data.sheets[0].data[0].rowData" :key="rowIndex">
           <tr>
             <template v-for="(cell, colIndex) in row.values" :key="colIndex">
-              <td
-                v-if="
-                  !data.sheets[0].data[0].rowMetadata[rowIndex]
-                    .hiddenByFilter &&
-                  shouldDisplayCell(
-                    rowIndex + 1,
-                    colIndex,
-                    merges,
-                    columnGroups
-                  )
-                "
-                :style="FromSheetsStyleToCss(cell.effectiveFormat)"
+              <td v-if="
+                !data.sheets[0].data[0].rowMetadata[rowIndex]
+                  .hiddenByFilter &&
+                shouldDisplayCell(
+                  rowIndex + 1,
+                  colIndex,
+                  merges,
+                  columnGroups
+                )
+              " :style="FromSheetsStyleToCss(cell.effectiveFormat)"
                 :rowspan="getRowSpan(rowIndex, colIndex, mergesCells)"
-                :colspan="getColumnSpan(rowIndex, colIndex, mergesCells)"
-              >
+                :colspan="getColumnSpan(rowIndex, colIndex, mergesCells)">
                 <Cell :cell="cell" />
               </td>
             </template>

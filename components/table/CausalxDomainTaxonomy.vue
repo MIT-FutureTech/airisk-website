@@ -1,44 +1,42 @@
 <template>
-    <div class="flex itenm-center justify-center mt-8 overflow-auto">
-      <table class="table table-striped table-bordered w-full">
-        <tbody>
-          <template
-            v-for="(row, rowIndex) in data.sheets[0].data[0].rowData"
-            :key="rowIndex"
-          >
-            <tr
-              v-if="!data.sheets[0].data[0].rowMetadata[rowIndex].hiddenByFilter"
-            >
-              <template v-for="(cell, colIndex) in row.values" :key="colIndex">
-                <td
-                  v-if="
-                    !data.sheets[0].data[0].rowMetadata[rowIndex]
-                      .hiddenByFilter &&
-                    shouldDisplayCell(
-                      rowIndex + (baseStart - 1),
-                      colIndex + 1,
-                      merges,
-                      columnGroups
-                    )
-                  "
-                  :style="FromSheetsStyleToCss(cell.effectiveFormat)"
-                  :rowspan="getRowSpan(rowIndex + (baseStart - 2), colIndex + 1, mergesCells)"
-                  :colspan="
-                    getColumnSpan(rowIndex + (baseStart - 2), colIndex + 1, mergesCells)
-                  "
-                >
-                  <Cell :cell="cell" />
-                </td>
-              </template>
-            </tr>
-          </template>
-        </tbody>
-      </table>
-    </div>
+  <div class="flex itenm-center justify-center mt-8 overflow-auto">
+    <table class="table table-striped table-bordered w-full">
+      <tbody>
+        <template v-for="(row, rowIndex) in data.sheets[0].data[0].rowData" :key="rowIndex">
+          <tr v-if="!data.sheets[0].data[0].rowMetadata[rowIndex].hiddenByFilter">
+            <template v-for="(cell, colIndex) in row.values" :key="colIndex">
+              <td v-if="
+                !data.sheets[0].data[0].rowMetadata[rowIndex]
+                  .hiddenByFilter &&
+                shouldDisplayCell(
+                  rowIndex + (baseStart - 1),
+                  colIndex + 1,
+                  merges,
+                  columnGroups
+                )
+              " :style="FromSheetsStyleToCss(cell.effectiveFormat)" :rowspan="getRowSpan(
+                  rowIndex + (baseStart - 2),
+                  colIndex + 1,
+                  mergesCells
+                )
+                  " :colspan="getColumnSpan(
+                  rowIndex + (baseStart - 2),
+                  colIndex + 1,
+                  mergesCells
+                )
+                  ">
+                <Cell :cell="cell" />
+              </td>
+            </template>
+          </tr>
+        </template>
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { FromSheetsStyleToCss } from '../../composables/FromSheetsStyleToCss'
+import { FromSheetsStyleToCss } from "../../composables/FromSheetsStyleToCss";
 import {
   getRowSpan,
   getColumnSpan,
@@ -46,15 +44,15 @@ import {
 } from "../../composables/SpanControll";
 
 const props = withDefaults(defineProps<{ cellRange: string }>(), {
-  cellRange: 'B11:L42'
+  cellRange: "B11:L42",
 });
 
-const tabName = "Causal x Domain Taxonomy comparison"
-const range = `'${tabName}'!${props.cellRange}`
-const baseStart = Number(props.cellRange.split(':')[0].replace(/^[a-z]+/i, ''))
+const tabName = "Causal x Domain Taxonomy comparison";
+const range = `'${tabName}'!${props.cellRange}`;
+const baseStart = Number(props.cellRange.split(":")[0].replace(/^[a-z]+/i, ""));
 
 const { data } = await useFetch(
-    `${process.env.SHEETS_BASE_URL}/${process.env.SPREADSHEET_ID}?key=${process.env.API_KEY}&ranges=${range}&includeGridData=${process.env.includeGridData}`
+  `${process.env.SHEETS_BASE_URL}/${process.env.SPREADSHEET_ID}?key=${process.env.API_KEY}&ranges=${range}&includeGridData=${process.env.includeGridData}`
 );
 
 const mergesCells = ref(data.value.sheets[0].merges);

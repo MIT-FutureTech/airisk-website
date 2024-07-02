@@ -1,10 +1,6 @@
-import { TableAIRiskDatabase, TableCausalTaxonomy, TableCausalTaxonomyStatics, TableCausalTaxonomyStaticsTwo, TableCausalxDomainTaxonomy, TableDomainTaxonomyResourceMapping, TableDomainTaxonomyStatistics, TableIncludedResources, TableResourcesBeingConsidered } from '../.nuxt/components';
-
 <template>
-    <TableResourcesBeingConsidered :data="data"  v-if="data.table_name === 'Database table'" />
-    <div v-else class="mt-8 bg-gray-500 h-96">
-        
-    </div>
+    <TableIncludedResources />
+    
 </template>
 
 <script setup>
