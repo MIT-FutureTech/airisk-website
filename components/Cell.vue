@@ -1,5 +1,5 @@
 <template>
-    <div class="p-1 text-sm break-words max-w-32">
+    <div class="p-1 text-sm break-words">
         <template v-if="isTruncated">
             {{ truncatedValue }}...
             <button class="text-[#A32035]" @click="toggleSeeAll">See All</button>

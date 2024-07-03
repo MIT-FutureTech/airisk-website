@@ -1,6 +1,6 @@
 <template>
   <div class="flex itenm-center justify-center mt-8 overflow-auto">
-    <table class="table table-striped table-bordered w-[60%] h-[80%]">
+    <table class="table table-striped table-bordered w-full]">
       <tbody>
         <template v-for="(row, rowIndex) in data.sheets[0].data[0].rowData" :key="rowIndex">
           <tr>

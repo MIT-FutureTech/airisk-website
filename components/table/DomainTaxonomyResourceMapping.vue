@@ -1,6 +1,6 @@
 <template>
   <div class="flex item-center justify-center">
-    <table class="table table-striped table-bordered w-full h-[500px]">
+    <table class="table table-striped table-bordered w-full h-[70vh]">
       <tbody>
         <template v-for="row in data.sheets[0].data[0].rowData.slice(0, 100)" :key="row">
           <tr>
