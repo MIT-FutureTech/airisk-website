@@ -2,6 +2,9 @@
     <div>
         <HeaderSection />
         <component :is="blockMap[section.collection]" v-for="(section,index) in sections.sections" :key="section.id" :index="index" :data="section.item" />
+        <div class="mt-8 max-w-7xl mx-auto">
+            <TableAIRiskDatabase cellRange="A2:S" />
+        </div>
         <FooterSection />
     </div>
 </template>

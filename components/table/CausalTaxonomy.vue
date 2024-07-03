@@ -50,10 +50,12 @@ const props = withDefaults(defineProps<{ cellRange: string }>(), {
 const tabName = "Causal Taxonomy of AI Risks v0.1";
 const range = `'${tabName}'!${props.cellRange}`;
 const baseStart = Number(props.cellRange.split(":")[0].replace(/^[a-z]+/i, ""));
+const config = useRuntimeConfig();
 
 const { data } = await useFetch(
-  `${process.env.SHEETS_BASE_URL}/${process.env.SPREADSHEET_ID}?key=${process.env.API_KEY}&ranges=${range}&includeGridData=${process.env.includeGridData}`
+  `${config.public.sheetsBaseUrl}/${config.public.spreadsheetId}?key=${config.public.apiKey}&ranges=${range}&includeGridData=${config.public.includeGridData}`
 );
+
 
 const mergesCells = ref(data.value.sheets[0].merges);
 const merges = ref(data.value.sheets[0].merges);

@@ -2,11 +2,11 @@
     <div class="p-2 text-sm break-words max-w-32">
         <template v-if="isTruncated">
             {{ truncatedValue }}...
-            <button @click="toggleSeeAll">See All</button>
+            <button class="text-[#A32035]" @click="toggleSeeAll">See All</button>
         </template>
         <template v-else>
             {{ formattedValue }}
-            <button v-if="isLongText" @click="toggleSeeAll">See Less</button>
+            <button class="text-[#A32035]" v-if="isLongText" @click="toggleSeeAll">See Less</button>
         </template>
     </div>
 </template>

@@ -27,7 +27,10 @@ const props = withDefaults(defineProps<{ cellRange: string }>(), {
 const tabName = "Resources being considered";
 const range = `'${tabName}'!${props.cellRange}`;
 
+const config = useRuntimeConfig();
+
 const { data } = await useFetch(
-  `${process.env.SHEETS_BASE_URL}/${process.env.SPREADSHEET_ID}?key=${process.env.API_KEY}&ranges=${range}&includeGridData=${process.env.includeGridData}`
+  `${config.public.sheetsBaseUrl}/${config.public.spreadsheetId}?key=${config.public.apiKey}&ranges=${range}&includeGridData=${config.public.includeGridData}`
 );
+
 </script>

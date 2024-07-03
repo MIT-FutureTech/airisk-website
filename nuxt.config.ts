@@ -19,6 +19,12 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
+      apiKey: '',
+      sheetsBaseUrl: '',
+      includeGridData: '',
+      spreadsheetId: '',
+
+
       directus: {
         url: "http://128.52.139.178:8055/"
       }
