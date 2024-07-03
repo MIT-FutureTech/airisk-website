@@ -1,5 +1,5 @@
 <template>
-    <div class="p-2 text-sm break-words max-w-32">
+    <div class="p-1 text-sm break-words max-w-32">
         <template v-if="isTruncated">
             {{ truncatedValue }}...
             <button class="text-[#A32035]" @click="toggleSeeAll">See All</button>
@@ -36,9 +36,10 @@ const truncatedValue = computed(() => {
 });
 
 const formattedValue = computed(() => {
-    if (props.cell.dataValidation?.condition?.type === 'ONE_OF_LIST') {
+    if (props.cell.dataValidation?.condition?.type === 'ONE_OF_LIST' && props.cell.formattedValue) {
         return props.cell.formattedValue.replace(/^[^a-zA-Z]+/, '');
     }
+
     return props.cell.formattedValue;
 });
 

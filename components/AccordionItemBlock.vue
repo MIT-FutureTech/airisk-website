@@ -1,7 +1,7 @@
 <template>
     <Disclosure as="div" class="border-y" v-slot="{ open }">
         <DisclosureButton class="flex w-full justify-between px-4 py-4 hover:bg-gray-100">
-            <span class="text-xl">{{data.item.title}}</span>
+            <span class="text-xl text-left">{{data.item.title}}</span>
             <Icon v-if="!open" name="heroicons:plus" class="h-5 w-5 " />
             <Icon v-else name="heroicons:minus" class="h-5 w-5 " />
         </DisclosureButton>

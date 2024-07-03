@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-8 overflow-auto">
+  <div class="mt-8 overflow-auto h-[70vh]">
     <table class="table table-striped table-bordered">
       <tbody>
         <template v-for="(row, rowIndex) in data.sheets[0].data[0].rowData" :key="rowIndex">
