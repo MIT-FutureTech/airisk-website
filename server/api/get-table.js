@@ -5,8 +5,13 @@ export default defineCachedEventHandler(async (event) => {
 
     const config = useRuntimeConfig();
 
+    const NUXT_PUBLIC_API_KEY = process.env.NUXT_PUBLIC_API_KEY
+    const NUXT_PUBLIC_SPREADSHEET_ID = process.env.NUXT_PUBLIC_SPREADSHEET_ID
+    const NUXT_PUBLIC_INCLUDE_GRID_DATA = process.env.NUXT_PUBLIC_INCLUDE_GRID_DATA
+    const NUXT_PUBLIC_SHEETS_BASE_URL = process.env.NUXT_PUBLIC_SHEETS_BASE_URL
+
     const data = await $fetch(
-      `${config.public.sheetsBaseUrl}/${config.public.spreadsheetId}/values/${range}?key=${config.public.apiKey}`
+      `${NUXT_PUBLIC_SHEETS_BASE_URL}/${NUXT_PUBLIC_SPREADSHEET_ID}/values/${range}?key=${NUXT_PUBLIC_API_KEY}`
     );
 
 
