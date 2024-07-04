@@ -26,7 +26,7 @@ export default defineNuxtConfig({
 
 
       directus: {
-        url: "http://128.52.139.178:8055/"
+        url: "https://airisk.mit.edu/directus/",
       }
     }
   }
