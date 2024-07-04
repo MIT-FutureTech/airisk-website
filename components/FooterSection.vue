@@ -5,7 +5,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-8">
                 <div>
                     <div class="text-3xl sm:text-5xl font-medium leading-10">
-                        AI Risk <span class="text-[#A32035]">Index</span>
+                        AI Risk <span class="text-[#A32035]">Repository</span>
                     </div>
                     <div class="text-[11px] sm:text-sm tracking-wider font-light">
                         A Comprehensive Framework of Risks from AI Systems
@@ -25,7 +25,7 @@
                     <div class="flex flex-col gap-4">
                         <div class="flex items-center gap-4">
                             <div class="text-sm">
-                                © {{ new Date().getFullYear() }} MIT AI Risk Index
+                                © {{ new Date().getFullYear() }} MIT AI Risk Repository
                             </div>
                         </div>
                     </div>

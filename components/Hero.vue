@@ -11,22 +11,24 @@
                 </h2>
 
                 <div class="flex flex-col gap-8 md:gap-32 md:flex-row mt-16">
-                    <a href="https://docs.google.com/document/d/1zwhVJrUl6Ht7N0bWtEohiHknTTFiexkmIHOnHzCpbq4/edit" target="_blank" aria-label="Read paper" >
+                    <a href="https://docs.google.com/document/d/1zwhVJrUl6Ht7N0bWtEohiHknTTFiexkmIHOnHzCpbq4/edit"
+                        target="_blank" aria-label="Read paper">
                         <button
                             class="py-4 w-64 cursor-pointer text-lg bg-[#A32035] rounded-lg text-white shadow-md flex items-center justify-center gap-2">
                             <Icon name="material-symbols:lab-profile-outline" class="w-6 h-6" />
-                            Read Paper
-                            
+                            Read report
+
                         </button>
                     </a>
-                    <a href="https://docs.google.com/spreadsheets/d/1evwjF4XmpykycpeZFq0FUteEAt7awx2i2oE6kMrV_xE/edit#gid=697017607" target="_blank" aria-label="See Database">
+                    <a href="https://docs.google.com/spreadsheets/d/1evwjF4XmpykycpeZFq0FUteEAt7awx2i2oE6kMrV_xE/edit#gid=697017607"
+                        target="_blank" aria-label="See Database">
                         <button
-                            class="py-4 w-64 cursor-pointer text-lg text-[#A32035] border border-gray-100  rounded-lg bg-white shadow-md flex items-center justify-center gap-2">See
+                            class="py-4 w-64 cursor-pointer text-lg text-[#A32035] border border-gray-100  rounded-lg bg-white shadow-md flex items-center justify-center gap-2">Explore
                             Database</button>
                     </a>
                 </div>
             </div>
-        </div> 
+        </div>
         <Particles id="tsparticles-hero" class="top-0 z-0 absolute h-full w-full" />
     </div>
 </template>

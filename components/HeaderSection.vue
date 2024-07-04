@@ -4,7 +4,7 @@
             <NuxtLink as="a" class="py-2 px-2 cursor-pointer" to="/#home">
                 <div class=" font-medium leading-none transition-all min-w-max"
                     :class="consenseHeader ? 'text-3xl sm:text-3xl' : 'text-3xl  sm:text-5xl'">
-                    AI Risk <span class="text-[#A32035]">Index</span>
+                    AI Risk <span class="text-[#A32035]">Repository</span>
                 </div>
                 <div class="leading-none  tracking-wider font-light transition-all"
                     :class="consenseHeader ? 'text-[0px] tracking-[0px] sm:text-[0px]' : 'text-[11px] sm:text-sm'">

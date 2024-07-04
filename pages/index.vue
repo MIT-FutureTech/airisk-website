@@ -8,14 +8,15 @@
 
 <script setup>
 useHead({
-    title: 'Ai Risk Index',
+    title: 'Ai Risk Repository',
     meta: [
         {
-            name: 'description', content: 'The AI Risk Index will serve as a foundation for a more coordinated, coherent, and complete approach to defining, auditing, and managing the risks posed by AI systems'
+            name: 'description', content: 'The AI Risk Repository will serve as a foundation for a more coordinated, coherent, and complete approach to defining, auditing, and managing the risks posed by AI systems'
         }
     ],
     htmlAttrs: {
         lang: 'en',
+        noindex: true,
     },
 })
 
