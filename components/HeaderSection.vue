@@ -12,7 +12,7 @@
                 </div>
             </NuxtLink>
             <div>
-                <nav class="font-light tracking-wide hidden md:flex">
+                <nav class="font-light tracking-wide hidden xl:flex">
                     <ul class="flex space-x-8">
                         <li v-for="link in links" :key="link.name">
                             <NuxtLink as="a" class="py-2 px-2 cursor-pointer hover:text-[#A32035]" :to="link.href">{{ link.name }}</NuxtLink>
@@ -21,7 +21,7 @@
 
                     </ul>
                 </nav>
-                <button @click="toggleMenu" class="md:hidden flex items-center">
+                <button @click="toggleMenu" class="xl:hidden flex items-center">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -30,7 +30,7 @@
                 </button>
             </div>
         </div>
-        <nav :class="{ 'block': isMenuOpen, 'hidden': !isMenuOpen }" class="md:hidden">
+        <nav :class="{ 'block': isMenuOpen, 'hidden': !isMenuOpen }" class="xl:hidden">
             <ul class="flex flex-col space-y-4 mt-4">
                 <li v-for="link in links" :key="link.name">
                     <NuxtLink as="a" class="py-2 px-2 cursor-pointer" :to="link.href" @click="toggleMenu">{{ link.name
@@ -49,10 +49,12 @@ const toggleMenu = () => {
 }
 
 const links = [
-    { "name": 'AI Risk Database', "href": '/#ai-risk-database', "aria-label": "AI Risk Database"},
-    { "name": 'Taxonomy of AI Risk', "href": '/#taxonomy-of-ai-risk', "aria-label": "Taxonomy of ai risk" },
-    { "name": 'Key insights', "href": '/#key-insights', "aria-label": "Key insights" },
-    { "name": 'How to use the index', "href": '/#how-to-use-the-index', "aria-label": "How to use index" },
+    { "name": 'Overview', "href": '/#' + "Repository Overview".toLowerCase().replaceAll(' ', '-'), "aria-label": "Repository Overview"},
+    { "name": 'AI Risk Database', "href": '/#' + "AI Risk Database".toLowerCase().replaceAll(' ', '-'), "aria-label": "AI Risk Database"},
+    { "name": 'Causal Taxonomy', "href": '/#' + "Causal Taxonomy of AI Risks".toLowerCase().replaceAll(' ', '-'), "aria-label": "Causal Taxonomy of AI Risks"},
+    { "name": 'Domain Taxonomy', "href": '/#' + "Domain Taxonomy of AI Risks".toLowerCase().replaceAll(' ', '-'), "aria-label": "Domain Taxonomy of AI Risks"},
+    { "name": 'How to use', "href": '/#' + "How to use the AI Risks Repository".toLowerCase().replaceAll(' ', '-'), "aria-label": "How to use the AI Risks Repository"},
+    { "name": 'FAQ', "href": '/#' + "Frequently Asked Questions ".toLowerCase().replaceAll(' ', '-'), "aria-label": "Frequently Asked Questions"},
 ]
 
 const consenseHeader = ref(false);

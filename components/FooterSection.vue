@@ -40,18 +40,12 @@
 
 <script setup>
 const links = [
-    { name: 'Key insights and artifacts', href: '/#key-insights-and-artifacts' },
-    { name: 'AI Risk Database', href: '/#ai-risk-database' },
-    { name: 'Taxonomy of AI Risk', href: '/#taxonomy-of-ai-risk' },
-    { name: 'Key insights', href: '/#key-insights' },
-    { name: 'How to use the index', href: '/#how-to-use-the-index' },
-    { name: 'FAQ', href: '/#faq' },
-    { name: 'Feedback', href: '/#feedback' },
-    { name: 'About the project', href: '/#about' },
-    {name: 'Next Steps', href: '/#next-steps' },
-    { name: 'Team', href: '/#team' },
-    { name: 'Acknowledgments', href: '/#acknowledgments' },
-
+    { "name": 'Overview', "href": '/#' + "Repository Overview".toLowerCase().replaceAll(' ', '-'), "aria-label": "Repository Overview"},
+    { "name": 'AI Risk Database', "href": '/#' + "AI Risk Database".toLowerCase().replaceAll(' ', '-'), "aria-label": "AI Risk Database"},
+    { "name": 'Causal Taxonomy', "href": '/#' + "Causal Taxonomy of AI Risks".toLowerCase().replaceAll(' ', '-'), "aria-label": "Causal Taxonomy of AI Risks"},
+    { "name": 'Domain Taxonomy', "href": '/#' + "Domain Taxonomy of AI Risks".toLowerCase().replaceAll(' ', '-'), "aria-label": "Domain Taxonomy of AI Risks"},
+    { "name": 'How to use', "href": '/#' + "How to use the AI Risks Repository".toLowerCase().replaceAll(' ', '-'), "aria-label": "How to use the AI Risks Repository"},
+    { "name": 'FAQ', "href": '/#' + "Frequently Asked Questions ".toLowerCase().replaceAll(' ', '-'), "aria-label": "Frequently Asked Questions"},
 ]
 
 </script>
