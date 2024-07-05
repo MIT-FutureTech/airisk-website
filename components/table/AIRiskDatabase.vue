@@ -69,7 +69,7 @@ const superTitles = {
   ]
 }
 
-const { data } = await useFetch('/api/get-table?tabName=AI%20Risk%20Database%20v0.1&cellRange=A2:S');
+const { data } = await useFetch('/api/get-table?tabName=AI%20Risk%20Database%20v1&cellRange=A2:S');
 const visibleRows = ref(100);
 
 const filteredHeaders = computed(() => {
