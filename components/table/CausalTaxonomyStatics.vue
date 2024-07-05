@@ -47,15 +47,12 @@ const props = withDefaults(defineProps<{ cellRange: string }>(), {
   cellRange: "B12:E22",
 });
 
-const tabName = "Causal Taxonomy statistics";
-const range = `'${tabName}'!${props.cellRange}`;
+
 const baseStart = Number(props.cellRange.split(":")[0].replace(/^[a-z]+/i, ""));
 
 const config = useRuntimeConfig();
 
-const { data } = await useFetch(
-  `${config.public.sheetsBaseUrl}/${config.public.spreadsheetId}?key=${config.public.apiKey}&ranges=${range}&includeGridData=${config.public.includeGridData}`
-);
+const { data } = await useFetch('/api/get-table-with-css?tabName=Causal%20Taxonomy%20statistics&cellRange=B12:E22');
 
 const mergesCells = ref(data.value.sheets[0].merges);
 const merges = ref(data.value.sheets[0].merges);

@@ -33,14 +33,9 @@ const props = withDefaults(defineProps<{ cellRange: string }>(), {
   cellRange: "B11:F34",
 });
 
-const tabName = "Domain Taxonomy of AI Risks v0.1";
-const range = `'${tabName}'!${props.cellRange}`;
 const baseStart = Number(props.cellRange.split(":")[0].replace(/^[a-z]+/i, ""));
-
 const config = useRuntimeConfig();
 
-const { data } = await useFetch(
-  `${config.public.sheetsBaseUrl}/${config.public.spreadsheetId}?key=${config.public.apiKey}&ranges=${range}&includeGridData=${config.public.includeGridData}`
-);
+const { data } = await useFetch('/api/get-table-with-css?tabName=Domain%20Taxonomy%20of%20AI%20Risks%20v0.1&cellRange=B11:F34')
 
 </script>

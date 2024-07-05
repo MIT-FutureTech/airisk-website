@@ -24,13 +24,5 @@ const props = withDefaults(defineProps<{ cellRange: string }>(), {
   cellRange: "B11:I24",
 });
 
-const tabName = "Resources being considered";
-const range = `'${tabName}'!${props.cellRange}`;
-
-const config = useRuntimeConfig();
-
-const { data } = await useFetch(
-  `${config.public.sheetsBaseUrl}/${config.public.spreadsheetId}?key=${config.public.apiKey}&ranges=${range}&includeGridData=${config.public.includeGridData}`
-);
-
+const { data } = await useFetch('/api/get-table-with-css?tabName=Resources%20being%20considered&cellRange=B11:I24')
 </script>

@@ -37,22 +37,24 @@
 
 <script setup lang="ts">
 import { FromSheetsStyleToCss } from "../../composables/FromSheetsStyleToCss";
+import {
+  getRowSpan,
+  getColumnSpan,
+  shouldDisplayCell,
+} from "../../composables/SpanControll";
 
 const props = withDefaults(defineProps<{ cellRange: string }>(), {
   cellRange: "B25:F35",
 });
 
-const tabName = "Causal Taxonomy statistics";
-const range = `'${tabName}'!${props.cellRange}`;
 const baseStart = Number(props.cellRange.split(":")[0].replace(/^[a-z]+/i, ""));
-
 const config = useRuntimeConfig();
 
-const { data } = await useFetch(
-  `${config.public.sheetsBaseUrl}/${config.public.spreadsheetId}?key=${config.public.apiKey}&ranges=${range}&includeGridData=${config.public.includeGridData}`
-);
+const { data } = await useFetch('/api/get-table-with-css?tabName=Causal%20Taxonomy%20statistics&cellRange=B25:F35');
 
 const mergesCells = ref(data.value.sheets[0].merges);
 const merges = ref(data.value.sheets[0].merges);
 const columnGroups = ref(data.value.sheets[0].columnGroups);
 </script>
+
+b25 f35

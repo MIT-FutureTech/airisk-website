@@ -42,22 +42,20 @@ import {
   getColumnSpan,
   shouldDisplayCell,
 } from "../../composables/SpanControll";
+import { useFetch } from "nuxt/app";
+import { ref } from "vue";
 
 const props = withDefaults(defineProps<{ cellRange: string }>(), {
   cellRange: "B11:D20",
 });
 
-const tabName = "Causal Taxonomy of AI Risks v0.1";
-const range = `'${tabName}'!${props.cellRange}`;
 const baseStart = Number(props.cellRange.split(":")[0].replace(/^[a-z]+/i, ""));
 const config = useRuntimeConfig();
 
-const { data } = await useFetch(
-  `${config.public.sheetsBaseUrl}/${config.public.spreadsheetId}?key=${config.public.apiKey}&ranges=${range}&includeGridData=${config.public.includeGridData}`
-);
-
+const { data } = await useFetch('/api/get-table-with-css?tabName=Causal%20Taxonomy%20of%20AI%20Risks%20v0.1&cellRange=B11:D20');
 
 const mergesCells = ref(data.value.sheets[0].merges);
 const merges = ref(data.value.sheets[0].merges);
 const columnGroups = ref(data.value.sheets[0].columnGroups);
 </script>
+

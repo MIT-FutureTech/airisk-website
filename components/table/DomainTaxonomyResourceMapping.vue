@@ -24,13 +24,6 @@ const props = withDefaults(defineProps<{ cellRange: string }>(), {
   cellRange: "B11:J55",
 });
 
-const tabName = "Domain Taxonomy resource mapping";
-const range = `'${tabName}'!${props.cellRange}`;
-
 const config = useRuntimeConfig();
-
-const { data } = await useFetch(
-  `${config.public.sheetsBaseUrl}/${config.public.spreadsheetId}?key=${config.public.apiKey}&ranges=${range}&includeGridData=${config.public.includeGridData}`
-);
-
+const { data } = await useFetch('/api/get-table-with-css?tabName=Domain%20Taxonomy%20resource%20mapping&cellRange=B11:J55')
 </script>
