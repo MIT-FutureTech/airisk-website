@@ -1,6 +1,6 @@
 import { createDirectus, rest, readItem, readItems, createItem } from '@directus/sdk';
 
-const directus = createDirectus('http://localhost:8055/').with(rest());
+const directus = createDirectus('https://airisk.mit.edu/directus').with(rest());
 
 export default defineNuxtPlugin(() => {
 	return {

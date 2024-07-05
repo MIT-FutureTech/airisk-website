@@ -9,7 +9,7 @@
                             AI Risk <span class="text-[#A32035]">Repository</span>
                         </div>
                         <div class="text-[11px] sm:text-sm tracking-wider font-light">
-                            A Comprehensive Framework of Risks from AI Systems
+                            A Comprehensive Database of Risks from AI Systems
                         </div>
                         <div class="mt-8 max-w-md">
                             <p class="text-lg">Want to know how this project is progressing?</p>

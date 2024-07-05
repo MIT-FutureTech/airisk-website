@@ -8,7 +8,7 @@
                 </div>
                 <div class="leading-none  tracking-wider font-light transition-all"
                     :class="consenseHeader ? 'text-[0px] tracking-[0px] sm:text-[0px]' : 'text-[11px] sm:text-sm'">
-                    A Comprehensive Framework of Risks from AI Systems
+                    A Comprehensive Database of Risks from AI Systems
                 </div>
             </NuxtLink>
             <div>
