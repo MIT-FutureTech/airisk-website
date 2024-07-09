@@ -12,7 +12,7 @@ useHead({
     title: 'Ai Risk Repository',
     meta: [
         {
-            name: 'description', content: 'The AI Risk Repository will serve as a foundation for a more coordinated, coherent, and complete approach to defining, auditing, and managing the risks posed by AI systems'
+            name: 'description', content: 'Navigate the complex landscape of risks from artificial intelligence with a comprehensive database of over 700 AI risks and two taxonomies to understand the causes and domains of AI risks.'
         },
         {
             property: 'og:title',
@@ -20,7 +20,7 @@ useHead({
         },
         {
             property: 'og:description',
-            content: 'The AI Risk Repository will serve as a foundation for a more coordinated, coherent, and complete approach to defining, auditing, and managing the risks posed by AI systems'
+            content: 'Navigate the complex landscape of risks from artificial intelligence with a comprehensive database of over 700 AI risks and two taxonomies to understand the causes and domains of AI risks.'
         },
         {
             property: 'og:image',
@@ -44,7 +44,7 @@ useHead({
         },
         {
             name: 'twitter:description',
-            content: 'The AI Risk Repository will serve as a foundation for a more coordinated, coherent, and complete approach to defining, auditing, and managing the risks posed by AI systems'
+            content: 'Navigate the complex landscape of risks from artificial intelligence with a comprehensive database of over 700 AI risks and two taxonomies to understand the causes and domains of AI risks.'
         },
         {
             name: 'twitter:image',
