@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "nuxt-headlessui",
     'nuxt-particles',
-    "nuxt-directus"
+    "nuxt-directus",
+    "nuxt-gtag"
   ],
   css: ["@/assets/css/main.css"],
 
@@ -16,7 +17,9 @@ export default defineNuxtConfig({
   particles: {
     mode: 'slim' // 'full' | 'slim' | 'basic' | 'custom'
   },
-
+  gtag: {
+    id: 'G-VEYPCR3DNJ'
+  },
   runtimeConfig: {
     public: {
       apiKey: '',
@@ -27,6 +30,7 @@ export default defineNuxtConfig({
 
       directus: {
         url: "https://airisk.mit.edu/directus/",
+        // url: "http://localhost:8055/",
       }
     }
   }

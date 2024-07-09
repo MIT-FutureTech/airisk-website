@@ -7,17 +7,65 @@
 </template>
 
 <script setup>
+
 useHead({
     title: 'Ai Risk Repository',
     meta: [
         {
             name: 'description', content: 'The AI Risk Repository will serve as a foundation for a more coordinated, coherent, and complete approach to defining, auditing, and managing the risks posed by AI systems'
+        },
+        {
+            property: 'og:title',
+            content: 'Ai Risk Repository'
+        },
+        {
+            property: 'og:description',
+            content: 'The AI Risk Repository will serve as a foundation for a more coordinated, coherent, and complete approach to defining, auditing, and managing the risks posed by AI systems'
+        },
+        {
+            property: 'og:image',
+            content: 'https://airisk.mit.edu/og-image.png'
+        },
+        {
+            property: 'og:url',
+            content: 'https://airisk.mit.edu'
+        },
+        {
+            property: 'og:type',
+            content: 'website'
+        },
+        {
+            name: 'twitter:card',
+            content: 'summary_large_image'
+        },
+        {
+            name: 'twitter:title',
+            content: 'Ai Risk Repository'
+        },
+        {
+            name: 'twitter:description',
+            content: 'The AI Risk Repository will serve as a foundation for a more coordinated, coherent, and complete approach to defining, auditing, and managing the risks posed by AI systems'
+        },
+        {
+            name: 'twitter:image',
+            content: 'https://airisk.mit.edu/og-image.png'
+        },
+        {
+            name: 'twitter:url',
+            content: 'https://airisk.mit.edu'
+        },
+        {
+            name: 'theme-color',
+            content: '#1A1A1A'
         }
+
+
     ],
     htmlAttrs: {
         lang: 'en',
         noindex: true,
     },
+    
 })
 
 

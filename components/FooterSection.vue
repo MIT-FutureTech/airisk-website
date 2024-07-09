@@ -70,7 +70,7 @@ const links = [
     { "name": 'AI Risk Database', "href": '/#' + "AI Risk Database".toLowerCase().replaceAll(' ', '-'), "aria-label": "AI Risk Database" },
     { "name": 'Causal Taxonomy', "href": '/#' + "Causal Taxonomy of AI Risks".toLowerCase().replaceAll(' ', '-'), "aria-label": "Causal Taxonomy of AI Risks" },
     { "name": 'Domain Taxonomy', "href": '/#' + "Domain Taxonomy of AI Risks".toLowerCase().replaceAll(' ', '-'), "aria-label": "Domain Taxonomy of AI Risks" },
-    { "name": 'How to use', "href": '/#' + "How to use the AI Risks Repository".toLowerCase().replaceAll(' ', '-'), "aria-label": "How to use the AI Risks Repository" },
+    { "name": 'How to use', "href": '/#' + "How to use the AI Risk Repository".toLowerCase().replaceAll(' ', '-'), "aria-label": "How to use the AI Risk Repository" },
     { "name": 'FAQ', "href": '/#' + "Frequently Asked Questions ".toLowerCase().replaceAll(' ', '-'), "aria-label": "Frequently Asked Questions" },
 
 ]
