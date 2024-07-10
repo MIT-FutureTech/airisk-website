@@ -9,14 +9,14 @@
 <script setup>
 
 useHead({
-    title: 'Ai Risk Repository',
+    title: 'AI Risk Repository',
     meta: [
         {
             name: 'description', content: 'Navigate the complex landscape of risks from artificial intelligence with a comprehensive database of over 700 AI risks and two taxonomies to understand the causes and domains of AI risks.'
         },
         {
             property: 'og:title',
-            content: 'Ai Risk Repository'
+            content: 'AI Risk Repository'
         },
         {
             property: 'og:description',
@@ -40,7 +40,7 @@ useHead({
         },
         {
             name: 'twitter:title',
-            content: 'Ai Risk Repository'
+            content: 'AI Risk Repository'
         },
         {
             name: 'twitter:description',

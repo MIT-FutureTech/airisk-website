@@ -1,16 +1,17 @@
 <template>
-  <div class="mt-8 ">
+  <div class="mt-8">
+    <div class="bg-[#A32035] -mb-2 -px-6 ml-0.5 mr-0.5 rounded-t flex justify-between items-center">
     <input type="text" 
     v-model="searchTerm"
     placeholder="Search" 
-    class="w-full sm:w-1/4 mt-2 mx-auto border-2 border-[#A32035] rounded-lg p-2 outline-none" />
+    class="w-full sm:w-1/4 mt-2 mx-auto border-2 border-[#A32035] rounded-lg p-2 outline-none ml-1 mb-1" /></div>
   <div class="mt-2 overflow-auto h-[70vh] text-xs">
 
       <table class=" relative w-full">
         <thead class="p-1 sticky top-0 z-10">
           <tr class="bg-black">
 
-            <th class="text-white  text-left py-2 px-4 border-l  sticky top-0 z-10"
+            <th class="text-white  text-left py-2 px-2 border-l  sticky top-0 z-10"
               v-for="header in filteredSupertitles" :key="header.key" :colspan="header.columnsSpan">
 
               {{ header.key }}
