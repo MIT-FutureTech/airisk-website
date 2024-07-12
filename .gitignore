@@ -23,3 +23,4 @@ logs
 .env.*
 !.env.example
 directus/database/data.db
+directus
